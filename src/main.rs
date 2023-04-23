@@ -8,19 +8,18 @@ fn main() -> std::io::Result<()> {
     let args: &[String] = &args[1..];
     match args.first() {
         Some(post) => {
-    
             let file = File::open("post.html")?;
             let mut reader = BufReader::new(file);
-        
+
             let mut html = String::new();
             reader.read_to_string(&mut html)?;
-        
+
             let post = format!("<p>{}</p>", post);
             let updated_html = html.replace(
                 "<div class=\"posts\">",
                 &format!("<div class=\"posts\">\n{}\n", post),
             );
-        
+
             //  update the file with post
             let mut output_file = File::create("post.html")?;
             write!(output_file, "{}", updated_html)?;
@@ -32,8 +31,6 @@ fn main() -> std::io::Result<()> {
             deploy();
         }
     }
-   
-
 
     Ok(())
 }
