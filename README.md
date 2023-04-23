@@ -1,5 +1,5 @@
 # portfolio-publisher
-Automated way to publish post to my portfolio website here https://space-turtle.pages.dev/post 
+Automated way to publish post to my portfolio website here https://space-turtle.pages.dev/post through CLI. 
 
 1. Take input as a post
 2. Update the post.html
